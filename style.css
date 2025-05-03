@@ -1,62 +1,215 @@
+/* General Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7fc;
+  color: #333;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Global Styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  color: white;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav {
+    display: none;
   }
-  
-  header {
-    background: #1a73e8;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+
+  header h1 {
+    font-size: 1.5rem;
   }
-  
-  nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-  
-  section {
-    padding: 20px;
-    background: white;
-    margin: 20px;
-    border-radius: 8px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  input, textarea {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 10px;
-    background: #1a73e8;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  button:hover {
-    background: #155ab6;
-  }
-  
-  footer {
-    background: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 10px;
-  }
-  
+}
+
+/* Hero Section */
+.intro {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.2rem;
+}
+
+/* Loan Calculator Section */
+#calculator {
+  padding: 3rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+#calculator h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+button {
+  align-self: center;
+}
+
+#results {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Contact Form Section */
+#contact {
+  padding: 3rem 2rem;
+  background-color: #f4f7fc;
+}
+
+#contact h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 150px;
+}
+
+button {
+  align-self: center;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* AOS (Animate On Scroll) */
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(30px);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-30px);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(30px);
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
