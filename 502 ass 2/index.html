@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Financial Advisory Service</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Financial Advisory Service</h1>
+    <nav>
+      <a href="#calculator">Loan Calculator</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="intro" data-aos="fade-up">
+    <h2>Welcome</h2>
+    <p>We help you plan your financial future with expert advice and easy tools.</p>
+  </section>
+
+  <section id="calculator" data-aos="fade-right">
+    <h2>Loan Calculator</h2>
+    <form id="loan-form">
+      <label>Loan Amount:
+        <input type="number" id="amount" required>
+      </label>
+      <label>Interest Rate (% per year):
+        <input type="number" id="interest" step="0.01" required>
+      </label>
+      <label>Years to Repay:
+        <input type="number" id="years" required>
+      </label>
+      <button type="submit">Calculate</button>
+    </form>
+    <div id="results"></div>
+  </section>
+
+  <section id="contact" data-aos="fade-left">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label>Name:
+        <input type="text" name="user_name" required>
+      </label>
+      <label>Email:
+        <input type="email" name="user_email" required>
+      </label>
+      <label>Message:
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Financial Advisory Service. All rights reserved.</p>
+  </footer>
+
+  <script>
+    AOS.init();
+
+    (function () {
+      emailjs.init("YOQFKbEJ1POvgRh4sr7"); // Replace with your EmailJS user ID
+    })();
+  </script>
+</body>
+</html>
